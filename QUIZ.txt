@@ -1,0 +1,28 @@
+import java.util.*;
+
+public class QuizGame {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        String[] questions = {
+            "1. What is the capital of India?\nA) Mumbai\nB) Delhi\nC) Chennai\nD) Kolkata",
+            "2. Who developed Java?\nA) Dennis Ritchie\nB) James Gosling\nC) Bjarne Stroustrup\nD) Guido van Rossum",
+            "3. Which keyword is used to inherit a class in Java?\nA) implement\nB) inherit\nC) extends\nD) import"
+        };
+
+        char[] answers = {'B', 'B', 'C'};
+        int score = 0;
+
+        for (int i = 0; i < questions.length; i++) {
+            System.out.println(questions[i]);
+            System.out.print("Your answer: ");
+            char ans = Character.toUpperCase(sc.next().charAt(0));
+            if (ans == answers[i]) {
+                score++;
+            }
+        }
+
+        System.out.println("You scored " + score + " out of " + questions.length);
+        sc.close();
+    }
+}
